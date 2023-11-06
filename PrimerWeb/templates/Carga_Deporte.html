@@ -6,9 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/Carga_Deporte/"  method="post">
-        <p> Deporte: <input type="text" name="deporte">
-        <p> Jugadores: <input type="text"name="jugadores">
+    {% if deporte.errores %}
+    <p style="color: red">Estan mal los datos, revisalos<p>
+    {% endif %}
+
+    <form action="/Carga_Deporte/"  method="post"> {% csfr_token %}
+        <table>
+            {{deporte.as_table}}
+        <table>
         <input type="submit" value="Enviar">
     <form>   
 </body>
