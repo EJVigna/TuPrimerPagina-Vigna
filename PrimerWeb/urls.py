@@ -1,9 +1,9 @@
-from django.contrib import admin
 from django.urls import path
-from PrimerWeb import views
+from . import views
+
+app_name = 'PrimerWeb'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('inicio/', views.inicio, name='inicio'),
     path('Club/', views.Club, name='Club'),
     path('Jugadores/', views.Jugadores, name='Jugadores'),
