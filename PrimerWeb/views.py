@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from PrimerWeb import models
-from forms import *
+from PrimerWeb.forms import CargaDeporte, Cargajugador, CargaClub
 
 
 def inicio (request):
