@@ -17,7 +17,7 @@ def Jugadores (request):
     return render(request, 'PrimerWeb/Jugadores.html')
 
 def Deporte (request):
-    return render(request, 'Deporte.html')
+    return render(request, 'Deporte.html', {'Deporte': 'futbol'})
 
 def Carga_Deporte (request):
     if request.method == 'POST':
