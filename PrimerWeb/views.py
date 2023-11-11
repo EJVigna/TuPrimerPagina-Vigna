@@ -14,7 +14,7 @@ def Club (request):
     return render(request, 'PrimerWeb/Club.html')
 
 def Jugadores (request):
-    return render(request, 'PrimerWeb/Jugadores.html')
+    return render(request, 'Jugador.html', {'jogador': 'JUAN ROMAN RIQUELME'})
 
 def Deporte (request):
     return render(request, 'Deporte.html', {'Deporte': 'futbol'})
