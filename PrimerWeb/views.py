@@ -5,10 +5,10 @@ import datetime
 
 def fecha_actual (request):
     fecha_actual = datetime.datetime.now()
-    return render(request, 'fechaActual.html', {'fecha atual': fecha_actual})
+    return render(request, 'fechaActual.html', {'fecha_atual': fecha_actual})
 
 def inicio (request):
-    return render(request, 'PrimerWeb/inicio.html')
+    return render(request, 'inicio.html')
 
 def Club (request):
     return render(request, 'PrimerWeb/Club.html')
