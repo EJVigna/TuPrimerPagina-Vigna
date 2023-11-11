@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from PrimerWeb import models
 from .forms import CargaDeporte, Cargajugador, CargaClub
+import datetime
 
+def fecha_actual (request):
+    fecha_actual = datetime.datetime.now()
+    return render(request, 'fechaActual.html', {'fecha atual': fecha_actual})
 
 def inicio (request):
     return render(request, 'PrimerWeb/inicio.html')
@@ -13,7 +17,7 @@ def Jugadores (request):
     return render(request, 'PrimerWeb/Jugadores.html')
 
 def Deporte (request):
-    return render(request, 'PrimerWeb/Deporte.html')
+    return render(request, 'Deporte.html')
 
 def Carga_Deporte (request):
     if request.method == 'POST':

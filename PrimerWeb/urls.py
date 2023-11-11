@@ -11,4 +11,5 @@ urlpatterns = [
     path('CargaDeporte/', views.Carga_Deporte, name='Carga deporte'),
     path('CargaClub/', views.Carga_Club, name='Carga club'),
     path('CargaJugador/', views.Carga_Jugador, name='Carga jugador'),
+    path('fechaagora/', views.fecha_actual, name='fecha_actual')
 ]
