@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    {% if deporte.errores %}
+    {% if deporte.errors %}
     <p style="color: red">Estan mal los datos, revisalos<p>
     {% endif %}
 
-    <form action="/Carga_Deporte/"  method="post"> {% csfr_token %}
+    <form action="/CargaDeporte/"  method="post"> {% csfr_token %}
         <table>
             {{deporte.as_table}}
         <table>

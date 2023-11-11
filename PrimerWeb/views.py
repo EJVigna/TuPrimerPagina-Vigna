@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from PrimerWeb import models
+from .models import Club, Jugador, Deporte
 from .forms import CargaDeporte, Cargajugador, CargaClub
 import datetime
+
 
 def fecha_actual (request):
     fecha_actual = datetime.datetime.now()
@@ -10,18 +11,18 @@ def fecha_actual (request):
 def inicio (request):
     return render(request, 'inicio.html')
 
-def Club (request):
+def club (request):
     return render(request, 'PrimerWeb/Club.html')
 
-def Jugadores (request):
+def jugadores (request):
     return render(request, 'Jugador.html', {'jogador': 'JUAN ROMAN RIQUELME'})
 
-def Deporte (request):
+def deporte (request):
     return render(request, 'Deporte.html', {'Deporte': 'futbol'})
 
 def Carga_Deporte (request):
     if request.method == 'POST':
-        deporte = CargaDeporte(request.post)
+        deporte = CargaDeporte(request.POST)
         print(deporte)
         if deporte.is_valid:
             informacion = deporte.cleaned_data
