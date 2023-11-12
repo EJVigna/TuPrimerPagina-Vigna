@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Club, Jugador, Deporte
 from .forms import CargaDeporte, Cargajugador, CargaClub
 
-
+def inicio (request):
+    return render (request, 'inicio.html')
 
 def Carga_Deporte (request):
     if request.method == 'POST':
@@ -32,5 +33,5 @@ def Carga_Club (request):
             return redirect('PrimerWeb:inicio')
     else:
         form = CargaClub()
-        return render(request, 'Carga_Jugador.html', {'form':form})
+        return render(request, 'Carga_Club.html', {'form':form})
             
