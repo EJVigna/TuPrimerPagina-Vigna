@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% if deporte.errors %}
-    <p style="color: red">Estan mal los datos, revisalos<p>
-    {% endif %}
+{% extends 'inicio.html' %}
 
-    <form action="/CargaDeporte/"  method="post"> {% csfr_token %}
-        <table>
-            {{deporte.as_table}}
-        <table>
-        <input type="submit" value="Enviar">
-    <form>   
-</body>
-</html>
+
+{% block contenidoQuecambia %}
+
+<h1> Agregar Deporte </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+        
+{% endblock contenidoQuecambia %}

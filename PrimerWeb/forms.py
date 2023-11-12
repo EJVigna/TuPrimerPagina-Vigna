@@ -1,18 +1,19 @@
 from django import forms
 from .models import *
 
-class CargaDeporte(forms.Form):
-    Nombre = forms.CharField()
-    Jugadores = forms.IntegerField()
+class CargaDeporte(forms.ModelForm):
+    class Meta:
+        model = Deporte
+        fields = ['Nombre', 'Jugadores']
     
-class Cargajugador(forms.Form):
-    Nombre = forms.CharField()
-    Apellido = forms.CharField()
-    Edad = forms.IntegerField()
-    Diciplina = forms.CharField()
     
-class CargaClub(forms.Form):
-    Nombre = forms.CharField()
-    Ciudad = forms.CharField()
-    Fundacion = forms.IntegerField()
-    Socios = forms.IntegerField()
+class Cargajugador(forms.ModelForm):
+    class Meta:
+        model = Jugador
+        fields = ['Nombre', 'Apellido', 'Edad', 'Diciplina']
+    
+class CargaClub(forms.ModelForm):
+    class Meta:
+        model = Club
+        fields = ['Nombre','Ciudad','Fundacion','Socios']
+    

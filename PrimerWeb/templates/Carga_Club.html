@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% if club.errores %}
-    <p style="color: red">Estan mal los datos, revisalos<p>
-    {% endif %}
+{% extends 'inicio.html' %}
 
-    <form action="/Carga_Club/"  method="post"> {% csfr_token %}
-        <table>
-            {{club.as_table}}
-        <table>
-        <input type="submit" value="Enviar">
-    <form>   
-</body>
-</html>
+
+{% block contenidoQuecambia %}
+
+<h1> Agregar Club </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+        
+{% endblock contenidoQuecambia %}
