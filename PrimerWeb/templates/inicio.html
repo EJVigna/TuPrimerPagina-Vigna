@@ -3,3 +3,17 @@
     {% block contenidoQuecambia %}
 
     {% endblock contenidoQuecambia %}
+
+    {% if deportes %}
+
+    <p>Estamos buscando el: {{deporte}}</p>
+
+    <ul>
+	    {% for deporte in deportes %}
+		    <li> {{deporte.Nombre}} </li>
+		    <li> {{deporte.Jugadores}} </li>
+	    {% endfor %}
+
+    </ul>
+
+    {% endif %}

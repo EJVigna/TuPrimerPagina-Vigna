@@ -3,11 +3,12 @@
 
 {% block contenidoQuecambia %}
 
+        
+{% endblock contenidoQuecambia %}
+
 <h1> Agregar Deporte </h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Guardar</button>
     </form>
-        
-{% endblock contenidoQuecambia %}
