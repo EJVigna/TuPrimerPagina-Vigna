@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from .models import Club, Jugador, Deporte
 from .forms import CargaDeporte, Cargajugador, CargaClub
 from django.http import HttpResponse
+from django.http.request import QueryDict
 
 def inicio (request):
     return render (request, 'inicio.html')

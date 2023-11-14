@@ -1,6 +1,7 @@
 from django.urls import path
 from PrimerWeb import views
 
+
 app_name = 'PrimerWeb'
 
 urlpatterns = [
