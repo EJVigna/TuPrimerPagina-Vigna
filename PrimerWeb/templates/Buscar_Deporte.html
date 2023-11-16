@@ -1,0 +1,21 @@
+<form action="/PrimerWeb/buscar_deporte/" method="GET">
+
+    <input type="string" name="Nombre" id="Nombre">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% if deportes %}
+
+<p>Estamos buscando el: {{deporte}}</p>
+
+<ul>
+    {% for deporte in deportes %}
+        <li> {{deporte.Nombre}} </li>
+        <li> {{deporte.Jugadores}} </li>
+    {% endfor %}
+
+</ul>
+
+{% endif %}

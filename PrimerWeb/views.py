@@ -37,16 +37,13 @@ def Carga_Club (request):
         form = CargaClub()
         return render(request, 'Carga_Club.html', {'form':form})
     
+    
 def buscar_deporte(request):
-
-        if request.GET["Nombre"]:
-            Nombre = request.GET['Nombre'] 
-            deportes = Deporte.objects.filter(Nombre__icontains=Nombre)
-
-            return render(request, "inicio.html", {"Nombre":Nombre, "Deporte":deportes})
-        else:
-
-	        respuesta = "No enviaste datos"
-
-        return HttpResponse(respuesta)
+    if 'Nombre' in request.GET:
+        Nombre=request.GET['Nombre']
+        deportes=Deporte.objects.filter(Nombre__icontains=Nombre)
+        return render(request, "inicio.html", {"Nombre": Nombre, "Deporte": deportes})
+    else:
+        respuesta = "No enviaste datos"
+    return HttpResponse(respuesta)
             
