@@ -16,7 +16,7 @@
     
     {% if deportes %}
     
-    <p> Estamos buscando el: {{deporte}}</p>
+    <h2> Estamos buscando el: {{deporte}}</h2>
     
     <ul>
         {% for deporte in deportes %}
@@ -27,6 +27,31 @@
     </ul>
     
     {% endif %}
+
+    <h1> Ingresa el nombre del Club que queres buscar </h1>
+
+    <form action="/PrimerWeb/buscar_club/" method="GET">
+
+        <input type="string" name="Nombre" id="Nombre">
+    
+        <input type="submit" value="Buscar">
+    
+    </form>
+    
+    {% if clubs %}
+    
+    <h2> Estamos buscando el: {{club}}</h2>
+    
+    <ul>
+        {% for club in clubs %}
+            <li> {{club.Nombre}} </li>
+            <li> {{club.Fundacion}} </li>
+        {% endfor %}
+    
+    </ul>
+    
+    {% endif %}
+
 
     {% endblock %}
 

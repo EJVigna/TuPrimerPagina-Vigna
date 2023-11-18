@@ -46,4 +46,13 @@ def buscar_deporte(request):
     else:
         respuesta = "No enviaste datos"
     return HttpResponse(respuesta)
+
+def buscar_club(request):
+    if 'Nombre' in request.GET:
+        Nombre=request.GET['Nombre']
+        clubs =Club.objects.filter(Nombre__icontains=Nombre)
+        return render(request, "PrimerWeb/inicio.html", {"Nombre": Nombre, "Club": clubs})
+    else:
+        respuesta = "No enviaste datos"
+    return HttpResponse(respuesta)
             
