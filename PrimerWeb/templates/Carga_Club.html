@@ -1,9 +1,9 @@
 {% extends 'inicio.html' %}
 
 
-{% block contenidoQueCambia %}
+{% block contenidoQuecambia %}
 
-<h1> Agregar Club </h1>
+<h3> Agregar Club </h3>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}

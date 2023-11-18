@@ -1,3 +1,8 @@
+{% extends 'inicio.html' %}
+
+
+{% block contenidoQuecambia %}
+
 <form action="/PrimerWeb/buscar_deporte/" method="GET">
 
     <input type="string" name="Nombre" id="Nombre">
@@ -8,7 +13,7 @@
 
 {% if deportes %}
 
-<p>Estamos buscando el: {{deporte}}</p>
+<p> Estamos buscando el: {{Nombre}}</p>
 
 <ul>
     {% for deporte in deportes %}
@@ -18,4 +23,10 @@
 
 </ul>
 
+{% else %}
+
+<p>No hay datos con esa descripcion</p>
+
 {% endif %}
+
+{% endblock %}

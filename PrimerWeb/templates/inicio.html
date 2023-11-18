@@ -1,5 +1,33 @@
-<h1>  Bienvenidos a la web deportiva </h1>
+    <h1>  Bienvenidos a la web deportiva </h1>
+
+    <h2> Encontra lo que queres saber sobre tu Deporte, Club o Jugadores favoritos </h2>
 
     {% block contenidoQuecambia %}
 
-    {% endblock contenidoQuecambia %}
+    <h1> Ingresa el nombre del deporte que queres buscar </h1>
+
+    <form action="/PrimerWeb/buscar_deporte/" method="GET">
+
+        <input type="string" name="Nombre" id="Nombre">
+    
+        <input type="submit" value="Buscar">
+    
+    </form>
+    
+    {% if deportes %}
+    
+    <p> Estamos buscando el: {{deporte}}</p>
+    
+    <ul>
+        {% for deporte in deportes %}
+            <li> {{deporte.Nombre}} </li>
+            <li> {{deporte.Jugadores}} </li>
+        {% endfor %}
+    
+    </ul>
+    
+    {% endif %}
+
+    {% endblock %}
+
+ 
